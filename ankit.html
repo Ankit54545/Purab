@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Trade With Munaaf</title>
+<title>Trading Community</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
@@ -14,148 +14,340 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Poppins',sans-serif;
 }
 
 body{
-background:#0f172a;
-display:flex;
-justify-content:center;
-align-items:center;
-min-height:100vh;
+background:#030303;
+font-family:'Poppins',sans-serif;
 color:#fff;
+overflow-x:hidden;
 }
 
-/* CARD */
-
-.container{
-width:95%;
-max-width:420px;
-padding:30px 25px;
-border-radius:18px;
-
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(12px);
-
-border:1px solid rgba(255,255,255,0.08);
-
-box-shadow:0 20px 60px rgba(0,0,0,0.6);
-text-align:center;
+/* MAIN */
+.main{
+width:100%;
+max-width:520px;
+margin:auto;
+padding:16px;
 }
 
-/* LOGO */
-
-.logo{
-width:80px;
-height:80px;
-border-radius:50%;
-border:2px solid #FFD700;
-margin-bottom:12px;
+/* HERO */
+.hero{
+background:linear-gradient(145deg,#07120d,#04140c,#07110e);
+border-radius:30px;
+padding:24px 20px;
+border:1px solid rgba(0,255,120,0.10);
+box-shadow:0 0 35px rgba(0,255,100,0.08);
+overflow:hidden;
+position:relative;
 }
 
-/* TEXT */
-
-h1{
-font-size:22px;
-color:#FFD700;
-margin-bottom:6px;
-}
-
-h2{
-font-size:15px;
-opacity:0.9;
-margin-bottom:10px;
-}
-
-.sub{
-font-size:13px;
-opacity:0.7;
+/* TOP BADGE */
+.badge{
+display:inline-block;
+padding:8px 16px;
+border-radius:40px;
+background:rgba(255,174,0,0.10);
+border:1px solid rgba(255,174,0,0.20);
+font-size:11px;
+font-weight:700;
+letter-spacing:2px;
+color:#ffbf00;
 margin-bottom:18px;
 }
 
-/* BUTTON */
+/* TITLE */
+.title{
+font-size:44px;
+font-weight:800;
+line-height:1;
+}
 
-.btn{
+.green{
+color:#00ff73;
+}
+
+.subtitle{
+margin-top:16px;
+font-size:15px;
+line-height:1.8;
+color:#d0d0d0;
+}
+
+/* IMAGE */
+.heroimg{
+margin-top:24px;
+border-radius:24px;
+overflow:hidden;
+border:1px solid rgba(255,255,255,0.08);
+box-shadow:0 0 30px rgba(0,0,0,0.35);
+}
+
+.heroimg img{
+width:100%;
 display:block;
+}
+
+/* SOCIAL */
+.socials{
+display:flex;
+justify-content:center;
+gap:14px;
+margin-top:22px;
+}
+
+.socials a{
+width:56px;
+height:56px;
+border-radius:18px;
+background:#101010;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:22px;
 text-decoration:none;
-background:#22c55e;
-color:#000;
-font-weight:700;
-padding:16px;
-border-radius:10px;
-margin:12px 0;
+color:#fff;
+border:1px solid rgba(255,255,255,0.06);
 transition:0.3s;
 }
 
-.btn:hover{
-background:#16a34a;
-transform:scale(1.03);
+.socials a:hover{
+transform:translateY(-4px);
 }
 
-/* TRUST BOX */
+/* MARKET */
+.market{
+margin-top:22px;
+background:#08110b;
+border-radius:26px;
+padding:22px;
+border:1px solid rgba(0,255,120,0.08);
+}
 
-.trust{
-background:rgba(0,255,150,0.08);
-padding:10px;
-border-radius:10px;
+.markettitle{
+font-size:20px;
+font-weight:700;
+margin-bottom:18px;
+color:#00ff73;
+}
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+}
+
+.card{
+background:#0f1712;
+padding:18px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,0.05);
+}
+
+.card h3{
 font-size:13px;
-margin-bottom:15px;
-border:1px solid rgba(0,255,150,0.2);
+color:#bdbdbd;
+margin-bottom:8px;
 }
 
-/* LIST */
-
-.points{
-list-style:none;
-font-size:14px;
-text-align:left;
-margin:15px 0;
+.card p{
+font-size:28px;
+font-weight:700;
 }
 
-.points li{
-margin:8px 0;
-}
-
-/* URGENCY */
-
-.timer{
-margin-top:10px;
+.up{
+margin-top:6px;
 font-size:13px;
-color:#facc15;
+color:#00ff73;
 }
 
-/* SOCIAL PROOF */
+/* TELEGRAM BOX */
+.telegram{
+margin-top:24px;
+padding:28px 20px;
+border-radius:28px;
+background:linear-gradient(135deg,#001d3d,#003566,#0077ff);
+text-align:center;
+box-shadow:0 0 35px rgba(0,132,255,0.25);
+}
 
-.proof{
+.telegram h2{
+font-size:38px;
+font-weight:800;
+line-height:1.1;
+}
+
+.telegram p{
 margin-top:12px;
-font-size:12px;
-opacity:0.7;
+font-size:15px;
+color:#dbefff;
+}
+
+.tgbtn{
+margin-top:20px;
+display:inline-block;
+padding:16px 28px;
+background:#fff;
+color:#0077ff;
+font-weight:800;
+text-decoration:none;
+border-radius:18px;
+font-size:16px;
+}
+
+/* STATS */
+.stats{
+margin-top:22px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+}
+
+.stat{
+padding:22px;
+border-radius:22px;
+text-align:center;
+background:#101010;
+border:1px solid rgba(255,255,255,0.06);
+}
+
+.stat h1{
+font-size:34px;
+font-weight:800;
+margin-bottom:6px;
+}
+
+.stat p{
+font-size:13px;
+color:#c9c9c9;
+}
+
+/* TIMER */
+.timer{
+margin-top:24px;
+padding:24px;
+border-radius:28px;
+background:#120606;
+border:1px solid rgba(255,0,0,0.14);
+text-align:center;
+}
+
+.timer h2{
+color:#ff3d3d;
+font-size:22px;
+margin-bottom:20px;
+letter-spacing:2px;
+}
+
+.timegrid{
+display:grid;
+grid-template-columns:1fr 1fr 1fr;
+gap:12px;
+}
+
+.timebox{
+background:#0e0000;
+padding:18px;
+border-radius:18px;
+border:1px solid rgba(255,0,0,0.15);
+}
+
+.timebox h1{
+font-size:40px;
+color:#ff3030;
+}
+
+.timebox p{
+margin-top:5px;
+font-size:11px;
+letter-spacing:2px;
+color:#bbb;
+}
+
+/* CTA */
+.cta{
+margin-top:24px;
+padding:28px 22px;
+border-radius:30px;
+background:linear-gradient(135deg,#00aaff,#0066ff);
+text-align:center;
+box-shadow:0 0 35px rgba(0,132,255,0.35);
+}
+
+.cta h1{
+font-size:34px;
+font-weight:800;
+line-height:1.2;
+}
+
+.cta p{
+margin-top:12px;
+font-size:15px;
+color:#e8f6ff;
+line-height:1.7;
+}
+
+.ctabtn{
+margin-top:20px;
+display:inline-block;
+padding:16px 34px;
+background:#fff;
+border-radius:18px;
+color:#0066ff;
+font-size:17px;
+font-weight:800;
+text-decoration:none;
 }
 
 /* FOOTER BRAND */
+.brand{
+margin-top:24px;
+background:linear-gradient(135deg,#0f172a,#1e1b4b,#312e81);
+border-radius:24px;
+padding:18px;
+text-align:center;
+border:1px solid rgba(255,255,255,0.06);
+box-shadow:0 0 25px rgba(99,102,241,0.30);
+animation:glow 2s infinite alternate;
+}
 
-.footer{
-margin-top:20px;
+.brand small{
+font-size:10px;
+letter-spacing:3px;
+color:#a0a0a0;
+display:block;
+margin-bottom:8px;
+}
+
+.brand h2{
+font-size:28px;
+font-weight:800;
+background:linear-gradient(90deg,#38bdf8,#818cf8,#c084fc);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.brand p{
+margin-top:8px;
 font-size:12px;
-opacity:0.6;
+color:#22c55e;
 }
 
-.footer a{
-color:#38bdf8;
-text-decoration:none;
-font-weight:600;
+@keyframes glow{
+from{
+box-shadow:0 0 10px rgba(99,102,241,0.25);
+}
+to{
+box-shadow:0 0 28px rgba(168,85,247,0.50);
+}
 }
 
-.footer a:hover{
-text-decoration:underline;
-}
-
-/* RISK */
-
-.risk{
-margin-top:10px;
-font-size:11px;
-opacity:0.5;
+/* FOOTER */
+.footer{
+text-align:center;
+padding:22px 0 10px;
+font-size:12px;
+color:#666;
 }
 
 </style>
@@ -163,57 +355,170 @@ opacity:0.5;
 
 <body>
 
-<div class="container">
+<div class="main">
 
-<img src="https://i.ibb.co/HThtfpR7/Whats-App-Image-2026-01-30-at-8-54-08-PM.jpg" class="logo">
+<!-- HERO -->
+<div class="hero">
 
-<h1>TRADE WITH MUNAAF</h1>
-<h2>NIFTY • BANKNIFTY • OPTIONS</h2>
-
-<p class="sub">
-Daily Intraday Trading Signals & Analysis
-</p>
-
-<!-- TOP BUTTON -->
-<a href="https://t.me/+6J4gKvfyUb0zYzI1" class="btn">
-🚀 Join Free Telegram Channel
-</a>
-
-<div class="trust">
-✔ Trusted by 5,000+ Traders <br>
-✔ Daily Consistent Setups
+<div class="badge">
+🔥 INDIA'S TRUSTED TRADING COMMUNITY
 </div>
 
-<ul class="points">
-<li>✔ 5–7 High Probability Trades</li>
-<li>✔ Exact Entry, SL & Target</li>
-<li>✔ Beginner Friendly Guidance</li>
-<li>✔ Live Market Updates</li>
-</ul>
+<div class="title">
+PANKAJ<br>
+<span class="green">SIR</span>
+</div>
 
-<!-- BOTTOM BUTTON -->
-<a href="https://t.me/+6J4gKvfyUb0zYzI1" class="btn">
-🚀 Join Free Telegram Channel
+<div class="subtitle">
+Simple Strategies. Real Market Training.<br>
+Helping Traders Become <span class="green">Consistent & Profitable.</span>
+</div>
+
+<div class="heroimg">
+<img src="https://i.imgur.com/xoQ6G6H.jpeg">
+</div>
+
+<div class="socials">
+<a href="#">▶</a>
+<a href="https://t.me/+3XoqJNLxYHswNTc1">✈</a>
+<a href="#">◎</a>
+</div>
+
+</div>
+
+<!-- MARKET -->
+<div class="market">
+
+<div class="markettitle">
+📈 MARKET LIVE
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h3>NIFTY 50</h3>
+<p>22,317</p>
+<div class="up">+0.86% ↗</div>
+</div>
+
+<div class="card">
+<h3>BANK NIFTY</h3>
+<p>48,861</p>
+<div class="up">+1.42% ↗</div>
+</div>
+
+<div class="card">
+<h3>SENSEX</h3>
+<p>74,101</p>
+<div class="up">+0.79% ↗</div>
+</div>
+
+<div class="card">
+<h3>GOLD</h3>
+<p>71,223</p>
+<div class="up">+0.35% ↗</div>
+</div>
+
+</div>
+</div>
+
+<!-- TELEGRAM -->
+<div class="telegram">
+
+<h2>50K+<br>TRADERS</h2>
+
+<p>
+Join India's Fast Growing Trading Community
+</p>
+
+<a href="https://t.me/+3XoqJNLxYHswNTc1" class="tgbtn">
+JOIN TELEGRAM →
 </a>
 
+</div>
+
+<!-- STATS -->
+<div class="stats">
+
+<div class="stat">
+<h1>50K+</h1>
+<p>Traders Mentored</p>
+</div>
+
+<div class="stat">
+<h1>7+</h1>
+<p>Years Experience</p>
+</div>
+
+<div class="stat">
+<h1>99%</h1>
+<p>Satisfaction Rate</p>
+</div>
+
+<div class="stat">
+<h1>4.9★</h1>
+<p>Google Rating</p>
+</div>
+
+</div>
+
+<!-- TIMER -->
 <div class="timer">
-⏳ Free Access Closing Soon
+
+<h2>LIMITED TIME OFFER</h2>
+
+<div class="timegrid">
+
+<div class="timebox">
+<h1>02</h1>
+<p>MINUTES</p>
 </div>
 
-<div class="proof">
-📈 Limited Seats • Active Community
+<div class="timebox">
+<h1>53</h1>
+<p>SECONDS</p>
 </div>
 
-<p class="risk">
-⚠ Market investments are subject to risk
+<div class="timebox">
+<h1>04</h1>
+<p>MILLISEC</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- CTA -->
+<div class="cta">
+
+<h1>Join Free Trading Community</h1>
+
+<p>
+Daily Market Analysis • Premium Signals • Live Sessions
 </p>
 
-<!-- CLEAN FOOTER -->
-<div class="footer">
-Powered by 
-<a href="https://t.me/+3XoqJNLxYHswNTc1" target="_blank">
-AdsBuild Agency
+<a href="https://t.me/+3XoqJNLxYHswNTc1" class="ctabtn">
+JOIN FREE NOW →
 </a>
+
+</div>
+
+<!-- BRAND -->
+<div class="brand">
+
+<small>POWERED BY</small>
+
+<h2>ADBUILDAGENCY</h2>
+
+<p>
+Meta Ads • Landing Pages • Instant Growth 🚀
+</p>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+© 2026 Trading Community • All Rights Reserved
 </div>
 
 </div>
