@@ -1,0 +1,2352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdBuild Agency | Premium Facebook Ads Agency</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #1877F2; /* Facebook Blue */
+            --primary-dark: #0D6EFD;
+            --secondary: #0A2540;
+            --accent: #FF6B35;
+            --accent-light: #FF9E7D;
+            --light: #F8F9FA;
+            --dark: #212529;
+            --gray: #6C757D;
+            --gray-light: #E9ECEF;
+            --success: #00A86B;
+            --warning: #FFC107;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.12);
+            --whatsapp-green: #25D366;
+            --whatsapp-dark: #128C7E;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .section-spacing {
+            padding: 80px 0;
+        }
+        
+        /* Header & Navigation - Mobile Optimized */
+        header {
+            background-color: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 26px;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .logo-icon {
+            color: var(--accent);
+            font-size: 22px;
+        }
+        
+        .logo-text span {
+            color: var(--accent);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+            position: relative;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--secondary);
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s;
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(24, 119, 242, 0.3);
+            font-size: 14px;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(24, 119, 242, 0.4);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--primary);
+            cursor: pointer;
+            z-index: 1001;
+            padding: 5px;
+        }
+        
+        /* WhatsApp Chat Widget Styles */
+        .whatsapp-widget {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 9999;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .whatsapp-button {
+            width: 60px;
+            height: 60px;
+            background-color: var(--whatsapp-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            position: relative;
+            animation: pulse 2s infinite;
+        }
+        
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
+            background-color: #1da851;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+        
+        .whatsapp-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: #ff4757;
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: badgePulse 1.5s infinite;
+        }
+        
+        @keyframes badgePulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .whatsapp-chat-window {
+            position: absolute;
+            bottom: 75px;
+            right: 0;
+            width: 350px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            display: none;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 10000;
+        }
+        
+        .whatsapp-chat-window.active {
+            display: block;
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .chat-header {
+            background-color: var(--whatsapp-dark);
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .chat-header-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--whatsapp-green));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+        
+        .chat-header-info h4 {
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: white;
+        }
+        
+        .chat-header-info p {
+            font-size: 13px;
+            opacity: 0.9;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .chat-header-info .online-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--whatsapp-green);
+            border-radius: 50%;
+            display: inline-block;
+        }
+        
+        .chat-body {
+            padding: 20px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .chat-message {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .message-bubble {
+            max-width: 80%;
+            padding: 12px 16px;
+            border-radius: 18px;
+            font-size: 14px;
+            line-height: 1.5;
+            position: relative;
+        }
+        
+        .message-bubble.incoming {
+            background-color: #f0f0f0;
+            align-self: flex-start;
+            border-bottom-left-radius: 5px;
+        }
+        
+        .message-bubble.outgoing {
+            background-color: var(--whatsapp-green);
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 5px;
+        }
+        
+        .message-time {
+            font-size: 11px;
+            color: var(--gray);
+            margin-top: 5px;
+            align-self: flex-end;
+        }
+        
+        .chat-footer {
+            padding: 20px;
+            border-top: 1px solid var(--gray-light);
+            background-color: #f8f9fa;
+        }
+        
+        .message-input-container {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .message-input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 1px solid var(--gray-light);
+            border-radius: 25px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            outline: none;
+            transition: all 0.3s;
+        }
+        
+        .message-input:focus {
+            border-color: var(--whatsapp-green);
+            box-shadow: 0 0 0 2px rgba(37, 211, 102, 0.2);
+        }
+        
+        .send-button {
+            width: 45px;
+            height: 45px;
+            background-color: var(--whatsapp-green);
+            border-radius: 50%;
+            border: none;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .send-button:hover {
+            background-color: var(--whatsapp-dark);
+            transform: scale(1.05);
+        }
+        
+        .quick-replies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .quick-reply {
+            background-color: white;
+            border: 1px solid var(--gray-light);
+            border-radius: 20px;
+            padding: 8px 16px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .quick-reply:hover {
+            background-color: var(--whatsapp-green);
+            color: white;
+            border-color: var(--whatsapp-green);
+        }
+        
+        /* Hero Section - Mobile Optimized */
+        .hero {
+            padding: 150px 0 80px;
+            background: linear-gradient(135deg, rgba(24, 119, 242, 0.05) 0%, rgba(255, 107, 53, 0.05) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 45%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(24, 119, 242, 0.03) 0%, rgba(255, 107, 53, 0.03) 100%);
+            border-radius: 0 0 0 100px;
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 100%;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+            line-height: 1.1;
+        }
+        
+        .hero h1 span {
+            color: var(--primary);
+            position: relative;
+        }
+        
+        .hero h1 span:after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background-color: rgba(255, 107, 53, 0.2);
+            z-index: -1;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: var(--gray);
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .secondary-button {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+        
+        .secondary-button:hover {
+            background-color: rgba(24, 119, 242, 0.1);
+            transform: translateY(-3px);
+        }
+        
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            color: var(--gray);
+            font-size: 0.8rem;
+        }
+        
+        /* Services Section */
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--secondary);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1rem;
+            padding: 0 10px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px 25px;
+            box-shadow: var(--shadow);
+            transition: all 0.4s ease;
+            text-align: center;
+            border: 1px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+            border-color: rgba(24, 119, 242, 0.1);
+        }
+        
+        .service-icon {
+            background: linear-gradient(135deg, rgba(24, 119, 242, 0.1) 0%, rgba(255, 107, 53, 0.1) 100%);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            transition: all 0.3s;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+        }
+        
+        .service-icon i {
+            font-size: 28px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .service-card h3 {
+            font-size: 1.4rem;
+            color: var(--secondary);
+            margin-bottom: 12px;
+        }
+        
+        .service-card p {
+            font-size: 0.95rem;
+            color: var(--gray);
+        }
+        
+        /* WhatsApp API Demo Section */
+        .whatsapp-api-section {
+            background: linear-gradient(135deg, rgba(37, 211, 102, 0.05) 0%, rgba(24, 119, 242, 0.05) 100%);
+        }
+        
+        .api-demo-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .api-demo-content h3 {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        .api-demo-content h3 i {
+            color: var(--whatsapp-green);
+        }
+        
+        .api-demo-features {
+            margin-top: 30px;
+        }
+        
+        .api-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .api-feature-icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(37, 211, 102, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .api-feature-icon i {
+            color: var(--whatsapp-green);
+            font-size: 18px;
+        }
+        
+        .api-demo-preview {
+            background-color: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: var(--shadow-hover);
+            text-align: center;
+        }
+        
+        .api-demo-preview h4 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        .api-phone-preview {
+            width: 300px;
+            max-width: 100%;
+            margin: 0 auto;
+            background-color: #f8f9fa;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .phone-screen {
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            height: 400px;
+            overflow-y: auto;
+            border: 2px solid var(--gray-light);
+        }
+        
+        .demo-message {
+            background-color: #f0f0f0;
+            border-radius: 15px;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            max-width: 80%;
+            text-align: left;
+            font-size: 14px;
+        }
+        
+        .demo-message.outgoing {
+            background-color: var(--whatsapp-green);
+            color: white;
+            margin-left: auto;
+        }
+        
+        /* Process Section */
+        .process {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .process .section-title h2 {
+            color: white;
+        }
+        
+        .process .section-title p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .process-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            position: relative;
+            margin-top: 40px;
+        }
+        
+        .process-steps:before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: calc(100% - 80px);
+            background-color: rgba(255, 255, 255, 0.2);
+            z-index: 1;
+        }
+        
+        .process-step {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            flex: 1;
+            max-width: 100%;
+        }
+        
+        .step-number {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin: 0 auto 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .process-step h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: white;
+        }
+        
+        .process-step p {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.8);
+            padding: 0 10px;
+        }
+        
+        /* Address & Contact Section */
+        .contact-section {
+            background-color: white;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        .contact-details {
+            margin-top: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            gap: 15px;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, rgba(24, 119, 242, 0.1) 0%, rgba(255, 107, 53, 0.1) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .contact-icon i {
+            font-size: 20px;
+            color: var(--primary);
+        }
+        
+        .contact-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--secondary);
+        }
+        
+        .contact-text p {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        /* Enhanced Contact Form Styles */
+        .contact-form {
+            background-color: var(--light);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        
+        .contact-form h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+        
+        .contact-form > p {
+            color: var(--gray);
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--secondary);
+            font-size: 0.95rem;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid var(--gray-light);
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            transition: all 0.3s;
+            background-color: white;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(24, 119, 242, 0.2);
+        }
+        
+        select.form-control {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236C757D' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 16px;
+            padding-right: 40px;
+        }
+        
+        /* Submit Button Styling */
+        .submit-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid var(--gray-light);
+            text-align: center;
+        }
+        
+        .submit-button {
+            background: linear-gradient(135deg, var(--success), #00C853);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 168, 107, 0.3);
+            font-size: 16px;
+            min-width: 200px;
+        }
+        
+        .submit-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 168, 107, 0.4);
+            background: linear-gradient(135deg, #00C853, var(--success));
+        }
+        
+        .submit-button:disabled {
+            background: var(--gray);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        /* Form Submission Success Message */
+        .success-message {
+            background-color: rgba(0, 168, 107, 0.1);
+            border-left: 4px solid var(--success);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .success-message.show {
+            display: block;
+        }
+        
+        .success-message i {
+            color: var(--success);
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .success-message h4 {
+            color: var(--success);
+            margin-bottom: 10px;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background-color: rgba(24, 119, 242, 0.03);
+        }
+        
+        .testimonial-slider {
+            max-width: 100%;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            margin: 0;
+        }
+        
+        .client-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .client-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: var(--gray-light);
+            overflow: hidden;
+        }
+        
+        .client-details h4 {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            margin-bottom: 5px;
+        }
+        
+        .client-company {
+            color: var(--primary);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        .client-rating {
+            margin-top: 5px;
+        }
+        
+        .testimonial-text {
+            font-size: 1rem;
+            font-style: italic;
+            color: var(--gray);
+            line-height: 1.7;
+            position: relative;
+            padding: 0 5px;
+        }
+        
+        .testimonial-text:before, .testimonial-text:after {
+            content: '"';
+            font-size: 3rem;
+            color: rgba(24, 119, 242, 0.2);
+            position: absolute;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        
+        .testimonial-text:before {
+            top: -20px;
+            left: 0;
+        }
+        
+        .testimonial-text:after {
+            bottom: -40px;
+            right: 0;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--secondary);
+            color: white;
+            padding-top: 60px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            color: white;
+            position: relative;
+            padding-bottom: 12px;
+        }
+        
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        .footer-col p {
+            color: #B0B7C3;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links li a {
+            color: #B0B7C3;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+        }
+        
+        .footer-links li a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding: 25px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #B0B7C3;
+            font-size: 0.85rem;
+        }
+        
+        .copyright a {
+            color: #B0B7C3;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .copyright a:hover {
+            color: white;
+        }
+        
+        /* Mobile-Specific Improvements */
+        @media (max-width: 768px) {
+            .section-spacing {
+                padding: 60px 0;
+            }
+            
+            .hero {
+                padding: 130px 0 60px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+            }
+            
+            .hero-buttons .cta-button,
+            .hero-buttons .secondary-button {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            
+            .stat-value {
+                font-size: 1.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .service-card {
+                padding: 25px 20px;
+            }
+            
+            .api-demo-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .process-step {
+                padding: 0 10px;
+            }
+            
+            .contact-form {
+                padding: 25px 20px;
+            }
+            
+            .submit-button {
+                width: 100%;
+                min-width: auto;
+                padding: 15px 30px;
+            }
+            
+            .testimonial-card {
+                padding: 25px 20px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            /* WhatsApp Widget Mobile Styles */
+            .whatsapp-widget {
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .whatsapp-button {
+                width: 55px;
+                height: 55px;
+                font-size: 24px;
+            }
+            
+            .whatsapp-chat-window {
+                width: calc(100vw - 40px);
+                right: 0;
+                left: 0;
+                margin: 0 auto;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            nav {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background-color: rgba(255, 255, 255, 0.98);
+                padding: 100px 20px 20px;
+                box-shadow: none;
+                z-index: 999;
+                flex-direction: column;
+                justify-content: flex-start;
+                overflow-y: auto;
+            }
+            
+            nav.active {
+                display: flex;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+                width: 100%;
+            }
+            
+            nav ul li {
+                margin: 0 0 20px 0;
+                width: 100%;
+            }
+            
+            nav ul li a {
+                font-size: 1.1rem;
+                padding: 10px 0;
+                display: block;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .cta-button {
+                display: none;
+            }
+            
+            .hero-bg {
+                display: none;
+            }
+        }
+        
+        @media (min-width: 768px) and (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .process-steps {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            
+            .process-steps:before {
+                display: none;
+            }
+            
+            .process-step {
+                flex: 0 0 calc(50% - 20px);
+                max-width: calc(50% - 20px);
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .api-demo-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (min-width: 992px) {
+            .process-steps {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            
+            .process-steps:before {
+                content: '';
+                position: absolute;
+                top: 45px;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background-color: rgba(255, 255, 255, 0.2);
+                z-index: 1;
+            }
+            
+            .process-step {
+                max-width: 250px;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        /* Touch-friendly improvements */
+        button, 
+        .cta-button, 
+        .secondary-button, 
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        input, 
+        textarea, 
+        select {
+            font-size: 16px; /* Prevents zoom on iOS */
+        }
+        
+        /* Better touch targets */
+        .form-control,
+        button,
+        .cta-button,
+        .secondary-button {
+            min-height: 48px;
+        }
+        
+        /* Smooth scrolling for the whole page */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Chat Widget -->
+    <div class="whatsapp-widget" id="whatsappWidget">
+        <div class="whatsapp-button" id="whatsappToggle">
+            <i class="fab fa-whatsapp"></i>
+            <div class="whatsapp-badge" id="whatsappBadge">1</div>
+        </div>
+        
+        <div class="whatsapp-chat-window" id="whatsappChat">
+            <div class="chat-header">
+                <div class="chat-header-avatar">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <div class="chat-header-info">
+                    <h4>AdBuild Agency Support</h4>
+                    <p><span class="online-dot"></span> Online • Replies instantly</p>
+                </div>
+            </div>
+            
+            <div class="chat-body" id="chatBody">
+                <div class="chat-message">
+                    <div class="message-bubble incoming">
+                        👋 Hi! I'm your Facebook Ads assistant. How can I help you today?
+                    </div>
+                    <div class="message-time">Just now</div>
+                </div>
+                
+                <div class="quick-replies" id="quickReplies">
+                    <div class="quick-reply" data-reply="Tell me about your services">Our Services</div>
+                    <div class="quick-reply" data-reply="I need a free audit">Free Audit</div>
+                    <div class="quick-reply" data-reply="What are your pricing plans?">Pricing</div>
+                    <div class="quick-reply" data-reply="Schedule a call with expert">Schedule Call</div>
+                </div>
+            </div>
+            
+            <div class="chat-footer">
+                <div class="message-input-container">
+                    <input type="text" class="message-input" id="messageInput" placeholder="Type your message here...">
+                    <button class="send-button" id="sendButton">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <p style="font-size: 11px; color: var(--gray); margin-top: 10px; text-align: center;">
+                    <i class="fas fa-lock"></i> Messages are secure and private
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="logo-text">AdBuild<span>Agency</span></div>
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#whatsapp-api">WhatsApp API</a></li>
+                    <li><a href="#process">Process</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <a href="#contact" class="cta-button">
+                <i class="fas fa-phone-alt"></i>
+                Book Free Audit
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Facebook Ads That <span>Drive Revenue</span> & Scale Businesses</h1>
+                <p>We're a premier Facebook & Instagram Ads agency specializing in data-driven advertising strategies that deliver consistent ROI for e-commerce, SaaS, and service businesses.</p>
+                
+                <div class="hero-buttons">
+                    <a href="#contact" class="cta-button">
+                        <i class="fas fa-calendar-check"></i>
+                        Schedule Free Strategy Call
+                    </a>
+                    <a href="#whatsapp-api" class="secondary-button">
+                        <i class="fab fa-whatsapp"></i>
+                        Chat on WhatsApp
+                    </a>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">3.8x</div>
+                        <div class="stat-label">Average ROAS</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">$14M+</div>
+                        <div class="stat-label">Revenue Generated</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">94%</div>
+                        <div class="stat-label">Client Retention</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">47%</div>
+                        <div class="stat-label">Lower CPA</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services section-spacing" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Facebook Ads Services</h2>
+                <p>Comprehensive advertising solutions tailored to your specific business objectives and target audience</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Strategic Campaign Management</h3>
+                    <p>End-to-end Facebook & Instagram campaign management with daily optimization, A/B testing, and performance monitoring.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>High-Converting Ad Creatives</h3>
+                    <p>Professional ad creative design, video production, and copywriting that captures attention and drives conversions.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Advanced Audience Targeting</h3>
+                    <p>Granular audience research, lookalike audience creation, and custom audience segmentation for precise targeting.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-funnel-dollar"></i>
+                    </div>
+                    <h3>Sales Funnel Optimization</h3>
+                    <p>Complete funnel strategy, landing page optimization, and conversion rate optimization to maximize ROI.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>Performance Analytics & Reporting</h3>
+                    <p>Comprehensive performance tracking, custom dashboards, and monthly reporting with actionable insights.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-sync"></i>
+                    </div>
+                    <h3>Retargeting & Remarketing</h3>
+                    <p>Strategic retargeting campaigns to re-engage website visitors, cart abandoners, and past customers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp API Integration Section -->
+    <section class="whatsapp-api-section section-spacing" id="whatsapp-api">
+        <div class="container">
+            <div class="section-title">
+                <h2>WhatsApp Business API Integration</h2>
+                <p>Connect with your customers directly through WhatsApp Business API for seamless communication</p>
+            </div>
+            
+            <div class="api-demo-container">
+                <div class="api-demo-content">
+                    <h3><i class="fab fa-whatsapp"></i> WhatsApp Business API</h3>
+                    <p>Integrate WhatsApp Business API with your Facebook Ads to automate customer communication, send campaign updates, and provide instant support.</p>
+                    
+                    <div class="api-demo-features">
+                        <div class="api-feature">
+                            <div class="api-feature-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div>
+                                <h4>Automated Responses</h4>
+                                <p>Set up instant replies for common queries about your Facebook Ads services.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="api-feature">
+                            <div class="api-feature-icon">
+                                <i class="fas fa-bullhorn"></i>
+                            </div>
+                            <div>
+                                <h4>Campaign Notifications</h4>
+                                <p>Send automated updates about campaign performance and optimizations.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="api-feature">
+                            <div class="api-feature-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div>
+                                <h4>Lead Qualification</h4>
+                                <p>Automatically qualify leads through WhatsApp conversations.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="api-feature">
+                            <div class="api-feature-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <div>
+                                <h4>24/7 Support</h4>
+                                <p>Provide round-the-clock support to your Facebook Ads clients.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 30px;">
+                        <a href="#contact" class="cta-button">
+                            <i class="fab fa-whatsapp"></i>
+                            Integrate WhatsApp API
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="api-demo-preview">
+                    <h4>Live WhatsApp Chat Demo</h4>
+                    <p>Try our interactive WhatsApp chat to see how it works!</p>
+                    
+                    <div class="api-phone-preview">
+                        <div class="phone-screen" id="phoneScreen">
+                            <div class="demo-message">
+                                Hi! I'm interested in Facebook Ads for my e-commerce store.
+                            </div>
+                            <div class="demo-message outgoing">
+                                Great! We specialize in e-commerce Facebook Ads. What's your monthly budget?
+                            </div>
+                            <div class="demo-message">
+                                Around $5,000 per month. Can you help?
+                            </div>
+                            <div class="demo-message outgoing">
+                                Absolutely! With that budget, we can typically achieve 3-5x ROAS. Want to schedule a free strategy call?
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="secondary-button" style="margin-top: 20px;" id="tryChatBtn">
+                        <i class="fab fa-whatsapp"></i>
+                        Try Live Chat
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process section-spacing" id="process">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Proven Process</h2>
+                <p>A structured approach that ensures consistent results and maximum ROI from your Facebook Ads</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <h3>Discovery & Strategy</h3>
+                    <p>In-depth analysis of your business, audience, and goals to create a customized advertising strategy.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <h3>Campaign Setup</h3>
+                    <p>Strategic campaign architecture, audience targeting, ad creative development, and technical setup.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <h3>Launch & Optimize</h3>
+                    <p>Campaign launch with continuous monitoring, A/B testing, and data-driven optimization for performance.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <h3>Scale & Report</h3>
+                    <p>Scaling successful campaigns and providing detailed performance reports with actionable insights.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Address & Contact Section -->
+    <section class="contact-section section-spacing" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Our Team</h2>
+                <p>Ready to scale your business with Facebook Ads? Get in touch with our experts for a free consultation.</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p>Schedule a free strategy call with our Facebook Ads specialists. We'll analyze your current performance and provide a customized growth plan.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Our Office</h4>
+                                <p>123 Business Avenue, Suite 450<br>
+                                New York, NY 10001<br>
+                                United States</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Phone Number</h4>
+                                <p>+1 (212) 555-7890<br>
+                                +1 (212) 555-7891</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email Address</h4>
+                                <p>hello@adbuildagency.com<br>
+                                sales@adbuildagency.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>WhatsApp Business</h4>
+                                <p>+1 (212) 555-7890<br>
+                                Chat with us 24/7</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Free Strategy Call</h3>
+                    <p>Fill out the form below and we'll contact you within 24 hours to schedule your free Facebook Ads audit.</p>
+                    
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" class="form-control" placeholder="John Smith" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" class="form-control" placeholder="john@example.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="+1 (555) 123-4567">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">How Can We Help? *</label>
+                            <textarea id="message" class="form-control" rows="4" placeholder="Tell us about your Facebook Ads goals and challenges..." required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="budget">Monthly Ad Budget</label>
+                            <select id="budget" class="form-control">
+                                <option value="">Select Budget Range</option>
+                                <option value="1-5k">$1,000 - $5,000</option>
+                                <option value="5-10k">$5,000 - $10,000</option>
+                                <option value="10-25k">$10,000 - $25,000</option>
+                                <option value="25k+">$25,000+</option>
+                            </select>
+                        </div>
+                        
+                        <div class="submit-section">
+                            <button type="submit" class="submit-button" id="submitBtn">
+                                <i class="fas fa-paper-plane"></i>
+                                Submit & Schedule Call
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials section-spacing" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Client Success Stories</h2>
+                <p>See what our clients have to say about working with our Facebook Ads agency</p>
+            </div>
+            
+            <div class="testimonial-slider">
+                <div class="testimonial-card">
+                    <div class="client-info">
+                        <div class="client-avatar">
+                            <div style="width: 100%; height: 100%; background-color: var(--primary); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: bold;">JS</div>
+                        </div>
+                        <div class="client-details">
+                            <h4>Jessica Simmons</h4>
+                            <p class="client-company">CEO, FitLife Apparel</p>
+                            <div class="client-rating">
+                                <i class="fas fa-star" style="color: var(--warning);"></i>
+                                <i class="fas fa-star" style="color: var(--warning);"></i>
+                                <i class="fas fa-star" style="color: var(--warning);"></i>
+                                <i class="fas fa-star" style="color: var(--warning);"></i>
+                                <i class="fas fa-star" style="color: var(--warning);"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-text">
+                        "Working with AdBuild Agency transformed our Facebook Ads strategy. Within 3 months, they increased our ROAS from 2.1x to 5.8x and reduced our cost per acquisition by 42%. Their team is incredibly responsive and data-driven. Highly recommended!"
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>AdBuild Agency</h3>
+                    <p>A premier Facebook & Instagram Ads agency specializing in data-driven advertising strategies that deliver measurable ROI for businesses of all sizes.</p>
+                    
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="#whatsapp-api"><i class="fas fa-chevron-right"></i> WhatsApp API</a></li>
+                        <li><a href="#process"><i class="fas fa-chevron-right"></i> Our Process</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Facebook Ads Management</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Instagram Advertising</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> WhatsApp Business API</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Conversion Optimization</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Analytics & Reporting</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> 123 Business Ave, Suite 450, NY 10001</a></li>
+                        <li><a href="tel:+12125557890"><i class="fas fa-phone-alt"></i> +1 (212) 555-7890</a></li>
+                        <li><a href="mailto:hello@adbuildagency.com"><i class="fas fa-envelope"></i> hello@adbuildagency.com</a></li>
+                        <li><a href="#"><i class="fab fa-whatsapp"></i> WhatsApp: +1 (212) 555-7890</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 AdBuild Agency. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+                <p style="margin-top: 10px;">Facebook & WhatsApp are trademarks of Meta Platforms, Inc.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // WhatsApp Chat API Implementation
+        class WhatsAppChatAPI {
+            constructor() {
+                this.messages = [
+                    {
+                        type: 'incoming',
+                        text: "👋 Hi! I'm your Facebook Ads assistant. How can I help you today?",
+                        time: "Just now"
+                    }
+                ];
+                
+                this.quickReplies = [
+                    "Tell me about your services",
+                    "I need a free audit",
+                    "What are your pricing plans?",
+                    "Schedule a call with expert",
+                    "How to get started?",
+                    "Facebook Ads case studies"
+                ];
+                
+                this.responses = {
+                    "Tell me about your services": "We offer comprehensive Facebook & Instagram Ads services including campaign management, ad creative production, audience targeting, funnel optimization, analytics, and retargeting strategies.",
+                    "I need a free audit": "Great! We provide free Facebook Ads audits where we analyze your current campaigns, identify optimization opportunities, and provide actionable recommendations. Would you like to schedule one?",
+                    "What are your pricing plans?": "Our pricing is customized based on your ad spend and specific needs. We typically work on a performance-based model or monthly retainer starting at $1,000/month. Would you like a detailed proposal?",
+                    "Schedule a call with expert": "Perfect! Our Facebook Ads experts are available for free strategy calls. What day and time works best for you?",
+                    "How to get started?": "Getting started is easy! 1) Schedule a free strategy call 2) We analyze your business 3) Create customized plan 4) Launch campaigns 5) Optimize for results. Ready to begin?",
+                    "Facebook Ads case studies": "We've helped clients achieve amazing results: 🛒 E-commerce: 5.8x ROAS 📱 SaaS: 42% lower CPA 🏢 Services: 320% more leads. Want to see specific case studies?"
+                };
+                
+                this.init();
+            }
+            
+            init() {
+                this.setupEventListeners();
+                this.renderMessages();
+                this.renderQuickReplies();
+            }
+            
+            setupEventListeners() {
+                // Toggle chat window
+                document.getElementById('whatsappToggle').addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    this.toggleChat();
+                });
+                
+                // Send message on button click
+                document.getElementById('sendButton').addEventListener('click', () => {
+                    this.sendMessage();
+                });
+                
+                // Send message on Enter key
+                document.getElementById('messageInput').addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        this.sendMessage();
+                    }
+                });
+                
+                // Quick reply buttons
+                document.querySelectorAll('.quick-reply').forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        const reply = e.target.getAttribute('data-reply');
+                        this.addMessage(reply, 'outgoing');
+                        this.processMessage(reply);
+                    });
+                });
+                
+                // Try chat button
+                document.getElementById('tryChatBtn').addEventListener('click', () => {
+                    this.toggleChat();
+                    this.scrollToChat();
+                });
+                
+                // Close chat when clicking outside
+                document.addEventListener('click', (e) => {
+                    const chatWindow = document.getElementById('whatsappChat');
+                    const toggleButton = document.getElementById('whatsappToggle');
+                    
+                    if (chatWindow.classList.contains('active') && 
+                        !chatWindow.contains(e.target) && 
+                        !toggleButton.contains(e.target)) {
+                        this.toggleChat();
+                    }
+                });
+            }
+            
+            toggleChat() {
+                const chatWindow = document.getElementById('whatsappChat');
+                const badge = document.getElementById('whatsappBadge');
+                
+                chatWindow.classList.toggle('active');
+                
+                // Hide badge when chat is opened
+                if (chatWindow.classList.contains('active')) {
+                    badge.style.display = 'none';
+                }
+            }
+            
+            scrollToChat() {
+                const chatBody = document.getElementById('chatBody');
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }
+            
+            addMessage(text, type) {
+                const message = {
+                    type: type,
+                    text: text,
+                    time: this.getCurrentTime()
+                };
+                
+                this.messages.push(message);
+                this.renderMessages();
+                
+                // Clear input if it's an outgoing message
+                if (type === 'outgoing') {
+                    document.getElementById('messageInput').value = '';
+                }
+                
+                // Scroll to bottom
+                setTimeout(() => this.scrollToChat(), 100);
+            }
+            
+            sendMessage() {
+                const input = document.getElementById('messageInput');
+                const message = input.value.trim();
+                
+                if (message) {
+                    this.addMessage(message, 'outgoing');
+                    this.processMessage(message);
+                }
+            }
+            
+            processMessage(message) {
+                // Show typing indicator
+                this.showTypingIndicator();
+                
+                // Find appropriate response
+                let response = "I'd be happy to help with that! Could you provide more details so I can give you the best assistance?";
+                
+                // Check for keyword matches
+                for (const [key, value] of Object.entries(this.responses)) {
+                    if (message.toLowerCase().includes(key.toLowerCase().split(' ')[0])) {
+                        response = value;
+                        break;
+                    }
+                }
+                
+                // Special handling for specific queries
+                if (message.toLowerCase().includes('hello') || message.toLowerCase().includes('hi')) {
+                    response = "Hello! 👋 Thanks for reaching out. How can I assist you with Facebook Ads today?";
+                } else if (message.toLowerCase().includes('price') || message.toLowerCase().includes('cost')) {
+                    response = "Our pricing depends on your ad spend and specific needs. We offer custom packages starting at $1,000/month. Would you like a personalized quote?";
+                } else if (message.toLowerCase().includes('contact') || message.toLowerCase().includes('call')) {
+                    response = "You can reach us at +1 (212) 555-7890 or schedule a call through our website. What's the best time to connect?";
+                }
+                
+                // Simulate typing delay
+                setTimeout(() => {
+                    this.removeTypingIndicator();
+                    this.addMessage(response, 'incoming');
+                    
+                    // Update badge
+                    this.updateBadge();
+                }, 1500);
+            }
+            
+            showTypingIndicator() {
+                const chatBody = document.getElementById('chatBody');
+                const typingIndicator = document.createElement('div');
+                typingIndicator.className = 'chat-message';
+                typingIndicator.id = 'typingIndicator';
+                typingIndicator.innerHTML = `
+                    <div class="message-bubble incoming">
+                        <div class="typing">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                `;
+                chatBody.appendChild(typingIndicator);
+                this.scrollToChat();
+            }
+            
+            removeTypingIndicator() {
+                const typingIndicator = document.getElementById('typingIndicator');
+                if (typingIndicator) {
+                    typingIndicator.remove();
+                }
+            }
+            
+            renderMessages() {
+                const chatBody = document.getElementById('chatBody');
+                const messagesContainer = document.createElement('div');
+                messagesContainer.id = 'messagesContainer';
+                
+                this.messages.forEach(msg => {
+                    const messageElement = document.createElement('div');
+                    messageElement.className = 'chat-message';
+                    messageElement.innerHTML = `
+                        <div class="message-bubble ${msg.type}">
+                            ${msg.text}
+                        </div>
+                        <div class="message-time">${msg.time}</div>
+                    `;
+                    messagesContainer.appendChild(messageElement);
+                });
+                
+                // Replace existing messages
+                const existingContainer = document.getElementById('messagesContainer');
+                if (existingContainer) {
+                    existingContainer.remove();
+                }
+                
+                // Insert before quick replies
+                const quickReplies = document.getElementById('quickReplies');
+                chatBody.insertBefore(messagesContainer, quickReplies);
+            }
+            
+            renderQuickReplies() {
+                const quickRepliesContainer = document.getElementById('quickReplies');
+                quickRepliesContainer.innerHTML = '';
+                
+                this.quickReplies.forEach(reply => {
+                    const button = document.createElement('div');
+                    button.className = 'quick-reply';
+                    button.setAttribute('data-reply', reply);
+                    button.textContent = reply;
+                    button.addEventListener('click', (e) => {
+                        const reply = e.target.getAttribute('data-reply');
+                        this.addMessage(reply, 'outgoing');
+                        this.processMessage(reply);
+                    });
+                    quickRepliesContainer.appendChild(button);
+                });
+            }
+            
+            updateBadge() {
+                const badge = document.getElementById('whatsappBadge');
+                const chatWindow = document.getElementById('whatsappChat');
+                
+                // Only show badge if chat is closed
+                if (!chatWindow.classList.contains('active')) {
+                    badge.style.display = 'flex';
+                }
+            }
+            
+            getCurrentTime() {
+                const now = new Date();
+                let hours = now.getHours();
+                let minutes = now.getMinutes();
+                const ampm = hours >= 12 ? 'PM' : 'AM';
+                
+                hours = hours % 12;
+                hours = hours ? hours : 12;
+                minutes = minutes < 10 ? '0' + minutes : minutes;
+                
+                return `${hours}:${minutes} ${ampm}`;
+            }
+            
+            // API Methods for WhatsApp Business API Integration
+            sendWhatsAppMessage(phoneNumber, message) {
+                // This would connect to your WhatsApp Business API
+                console.log(`Sending WhatsApp message to ${phoneNumber}: ${message}`);
+                
+                // Example API call structure:
+                /*
+                fetch('https://your-whatsapp-api-endpoint.com/send', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer YOUR_API_TOKEN'
+                    },
+                    body: JSON.stringify({
+                        to: phoneNumber,
+                        message: message,
+                        type: 'text'
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Message sent:', data);
+                })
+                .catch(error => {
+                    console.error('Error sending message:', error);
+                });
+                */
+            }
+            
+            receiveWhatsAppMessage(phoneNumber, message) {
+                // This would handle incoming WhatsApp messages
+                console.log(`Received WhatsApp message from ${phoneNumber}: ${message}`);
+                
+                // Process the message and send automated response
+                this.processIncomingMessage(message, phoneNumber);
+            }
+            
+            processIncomingMessage(message, phoneNumber) {
+                // Process incoming message and send appropriate response
+                const response = this.generateAutoResponse(message);
+                
+                // Send automated response
+                this.sendWhatsAppMessage(phoneNumber, response);
+                
+                // Also log it in the chat interface if the user is currently chatting
+                this.addMessage(`Customer: ${message}`, 'incoming');
+                setTimeout(() => {
+                    this.addMessage(response, 'outgoing');
+                }, 1000);
+            }
+            
+            generateAutoResponse(message) {
+                // Generate automated response based on message content
+                if (message.toLowerCase().includes('service') || message.toLowerCase().includes('help')) {
+                    return "Thanks for your message! We specialize in Facebook & Instagram Ads. How can we assist you today?";
+                } else if (message.toLowerCase().includes('price') || message.toLowerCase().includes('cost')) {
+                    return "Our pricing is customized based on your needs. Would you like a free consultation to discuss your requirements?";
+                } else if (message.toLowerCase().includes('audit') || message.toLowerCase().includes('free')) {
+                    return "Yes, we offer free Facebook Ads audits! Please share your website or current campaigns for analysis.";
+                } else {
+                    return "Thank you for your message! Our team will get back to you shortly. In the meantime, feel free to ask any specific questions about Facebook Ads.";
+                }
+            }
+        }
+        
+        // Initialize WhatsApp Chat API
+        const whatsappAPI = new WhatsAppChatAPI();
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            mainNav.classList.toggle('active');
+            
+            // Change icon
+            const icon = mobileMenuBtn.querySelector('i');
+            if (mainNav.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+                document.body.style.overflow = 'hidden';
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mainNav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+                document.body.style.overflow = 'auto';
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Header background on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.08)';
+            } else {
+                header.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.05)';
+            }
+        });
+        
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+            const budget = document.getElementById('budget').value;
+            
+            // Send WhatsApp notification (simulated)
+            whatsappAPI.sendWhatsAppMessage(
+                '+12125557890', 
+                `New lead from website:\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nBudget: ${budget}\nMessage: ${message.substring(0, 100)}...`
+            );
+            
+            // Show success message
+            alert(`Thank you ${name}! We've received your request and will contact you within 24 hours. We've also sent you a WhatsApp confirmation.`);
+            
+            // Reset form
+            this.reset();
+        });
+        
+        // Add animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.service-card, .process-step, .contact-item, .api-feature');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.style.opacity = "1";
+                    element.style.trans form = "translateY(0)";
+                }
+            });
+        }
+        
+        // Set initial state for animated elements
+        document.querySelectorAll('.service-card, .process-step, .contact-item, .api-feature').forEach(element => {
+            element.style.opacity = "0";
+            element.style.transform = "translateY(20px)";
+            element.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+        });
+        
+        // Run on load and scroll
+        window.addEventListener('load', animateOnScroll);
+        window.addEventListener('scroll', animateOnScroll);
+        
+        // Auto-open chat after 10 seconds if user hasn't interacted
+        setTimeout(() => {
+            const chatWindow = document.getElementById('whatsappChat');
+            if (!chatWindow.classList.contains('active')) {
+                whatsappAPI.updateBadge();
+            }
+        }, 10000);
+    </script>
+</body>
+</html>
